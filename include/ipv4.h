@@ -41,7 +41,7 @@ inline std::string to_string(const IPV4 &ip) {
          std::to_string(ip.c) + "." + std::to_string(ip.d);
 }
 
-NetAddress from_sockaddr(const sockaddr_in &addr) {
+inline NetAddress from_sockaddr(const sockaddr_in &addr) {
   uint32_t ip = ntohl(addr.sin_addr.s_addr);
   return {IPV4(ip >> 24, (ip >> 16) & 0xFF, (ip >> 8) & 0xFF, ip & 0xFF),
           ntohs(addr.sin_port)};
