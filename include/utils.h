@@ -5,12 +5,11 @@
 #ifndef DNS_CPP_UTILS_H
 #define DNS_CPP_UTILS_H
 
-
-#include <iostream>
-#include <iomanip>
-#include "sql.h"
-#include "resolver.h"
 #include "dns.h"
+#include "resolver.h"
+#include "sql.h"
+#include <iomanip>
+#include <iostream>
 
 std::__1::vector<std::byte> string_to_bytes(const std::string &str) {
   return {reinterpret_cast<const std::byte *>(str.data()),
@@ -45,4 +44,4 @@ void print_bytes_in_hex(const std::__1::vector<std::byte> &bytes,
   std::cout << std::endl;
 }
 
-#endif //DNS_CPP_UTILS_H
+#endif // DNS_CPP_UTILS_H
